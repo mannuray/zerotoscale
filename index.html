@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zero to Anywhere | AI-Powered Software Development</title>
+    <title>ZeroScale | AI-Powered Software Development in Days, Not Months</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,16 +15,17 @@
         }
 
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111111;
-            --bg-card: #161616;
-            --border: #222222;
-            --text-primary: #ffffff;
-            --text-secondary: #888888;
-            --text-muted: #555555;
-            --accent: #8b5cf6;
-            --accent-secondary: #06b6d4;
-            --gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --accent: #10b981;
+            --dark: #111827;
+            --gray-900: #1f2937;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
         }
 
         html {
@@ -33,10 +34,9 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            color: var(--dark);
             line-height: 1.6;
-            overflow-x: hidden;
+            background: var(--white);
         }
 
         .container {
@@ -45,350 +45,301 @@
             padding: 0 24px;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.8; }
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--gray-100);
         }
 
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 16px 24px;
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
         .logo span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 32px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 400;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
+            color: var(--gray-500);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            color: var(--dark);
         }
 
         .nav-cta {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            padding: 10px 24px;
-            border-radius: 100px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
         }
 
         .nav-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+            background: var(--primary-dark);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 140px 0 80px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            padding: 120px 24px;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-        }
-
-        .hero-gradient {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .hero-gradient-1 {
-            background: var(--accent);
-            top: -200px;
-            right: -100px;
-        }
-
-        .hero-gradient-2 {
-            background: var(--accent-secondary);
-            bottom: -200px;
-            left: -100px;
-            animation-delay: -4s;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
+            background: linear-gradient(180deg, var(--gray-100) 0%, var(--white) 100%);
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: var(--white);
+            border: 1px solid var(--gray-300);
             padding: 8px 16px;
             border-radius: 100px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            animation: fadeIn 0.8s ease;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            margin-bottom: 24px;
         }
 
-        .hero-badge-dot {
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+        .hero-badge-icon {
+            font-size: 1rem;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 600;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-            animation: fadeInUp 0.8s ease 0.2s both;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark);
         }
 
-        .hero h1 .gradient-text {
-            background: var(--gradient);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient 4s ease infinite;
+        .hero h1 span {
+            color: var(--primary);
         }
 
-        .hero p {
+        .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--text-secondary);
+            color: var(--gray-500);
             max-width: 600px;
-            margin: 0 auto 48px;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease 0.4s both;
+            margin: 0 auto 16px;
         }
 
-        .hero-buttons {
+        .hero-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .hero-highlight-item .icon {
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+
+        .hero-cta {
             display: flex;
             gap: 16px;
             justify-content: center;
-            animation: fadeInUp 0.8s ease 0.6s both;
+            margin-bottom: 48px;
         }
 
         .btn-primary {
-            background: var(--text-primary);
-            color: var(--bg-primary);
+            background: var(--primary);
+            color: var(--white);
             padding: 16px 32px;
-            border-radius: 100px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
         }
 
         .btn-primary:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
+            background: var(--white);
+            color: var(--dark);
             padding: 16px 32px;
-            border-radius: 100px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1rem;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            border: 1px solid var(--gray-300);
+            transition: all 0.2s;
         }
 
         .btn-secondary:hover {
-            border-color: var(--text-secondary);
-            background: var(--bg-card);
+            border-color: var(--dark);
+            background: var(--gray-100);
         }
 
-        .btn-arrow {
-            transition: transform 0.3s ease;
-        }
-
-        .btn-primary:hover .btn-arrow {
-            transform: translateX(4px);
-        }
-
-        /* Trusted By */
-        .trusted {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .trusted p {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 32px;
-        }
-
-        .trusted-logos {
+        .hero-stats {
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 64px;
-            flex-wrap: wrap;
+            padding-top: 48px;
+            border-top: 1px solid var(--gray-300);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .trusted-logo {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        .hero-stat {
+            text-align: center;
         }
 
-        .trusted-logo:hover {
-            color: var(--text-secondary);
+        .hero-stat h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
         }
 
-        /* Services Section */
-        .services {
-            padding: 140px 0;
+        .hero-stat p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
         }
 
-        .section-label {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Value Props */
+        .value-props {
+            padding: 80px 0;
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
             margin-bottom: 16px;
         }
 
+        .value-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .value-item p {
+            color: var(--gray-300);
+            font-size: 0.95rem;
+        }
+
+        /* What's Included */
+        .included {
+            padding: 100px 0;
+        }
+
         .section-header {
-            margin-bottom: 80px;
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .section-header h2 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 600;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-            line-height: 1.1;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
         }
 
         .section-header p {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
+            color: var(--gray-500);
+            font-size: 1.1rem;
             max-width: 500px;
-            font-weight: 300;
+            margin: 0 auto;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .included-item {
+            display: flex;
+            gap: 16px;
+            padding: 24px;
+            background: var(--gray-100);
+            border-radius: 12px;
+        }
+
+        .included-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+
+        .included-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .included-content p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: var(--gray-100);
         }
 
         .services-grid {
@@ -398,279 +349,285 @@
         }
 
         .service-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            border-color: transparent;
-        }
-
-        .service-card:hover::before {
-            opacity: 0.05;
-        }
-
-        .service-card > * {
-            position: relative;
-            z-index: 1;
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
         .service-icon {
             width: 56px;
             height: 56px;
-            background: var(--bg-secondary);
-            border-radius: 14px;
+            background: var(--gray-100);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-size: 1.5rem;
-            transition: all 0.3s ease;
         }
 
         .service-card:hover .service-icon {
-            background: var(--gradient);
+            background: var(--primary);
+            color: var(--white);
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
         .service-card p {
-            color: var(--text-secondary);
+            color: var(--gray-500);
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* Process Section */
-        .process {
-            padding: 140px 0;
-            background: var(--bg-secondary);
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
         }
 
-        .process-grid {
+        .steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 32px;
             position: relative;
         }
 
-        .process-grid::before {
+        .steps::before {
             content: '';
             position: absolute;
             top: 40px;
-            left: 60px;
-            right: 60px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), var(--border), transparent);
+            left: 80px;
+            right: 80px;
+            height: 2px;
+            background: var(--gray-300);
         }
 
-        .process-step {
+        .step {
             text-align: center;
+            position: relative;
         }
 
         .step-number {
             width: 80px;
             height: 80px;
-            background: var(--bg-primary);
-            border: 1px solid var(--border);
+            background: var(--white);
+            border: 2px solid var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
+            margin: 0 auto 20px;
             font-size: 1.5rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 800;
+            color: var(--primary);
             position: relative;
             z-index: 1;
         }
 
-        .process-step:hover .step-number {
-            background: var(--gradient);
-            border-color: transparent;
-            transform: scale(1.1);
-        }
-
-        .process-step h3 {
+        .step h3 {
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
-        .process-step p {
-            color: var(--text-secondary);
+        .step p {
+            color: var(--gray-500);
             font-size: 0.9rem;
         }
 
-        /* Why Us Section */
-        .why-us {
-            padding: 140px 0;
+        /* Pricing Highlight */
+        .pricing-highlight {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
         }
 
-        .why-us .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .pricing-highlight h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
         }
 
-        .features-list {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
+        .pricing-highlight p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .feature-item {
-            display: flex;
-            gap: 20px;
-            padding: 24px;
+        .price-box {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
-            transition: all 0.3s ease;
+            padding: 32px 48px;
+            margin-bottom: 32px;
         }
 
-        .feature-item:hover {
-            background: var(--bg-card);
+        .price-box .price {
+            font-size: 4rem;
+            font-weight: 800;
         }
 
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-card);
-            border-radius: 12px;
+        .price-box .price-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .pricing-features {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .pricing-feature {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
+            gap: 8px;
+            font-size: 1rem;
         }
 
-        .feature-item:hover .feature-icon {
-            background: var(--gradient);
+        .pricing-feature .check {
+            color: var(--accent);
         }
 
-        .feature-content h3 {
+        .pricing-highlight .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .pricing-highlight .btn-primary:hover {
+            background: var(--gray-100);
+        }
+
+        /* Guarantee */
+        .guarantee {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px;
+            border: 2px solid var(--accent);
+        }
+
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-box h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .guarantee-box p {
+            color: var(--gray-500);
             font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 6px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .feature-content p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Stats */
-        .stats {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 48px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-
-        .stat-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* CTA Section */
+        /* CTA */
         .cta {
-            padding: 140px 0;
+            padding: 100px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-bg {
-            position: absolute;
-            inset: 0;
-            background: var(--gradient);
-            opacity: 0.05;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
         }
 
         .cta h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-            line-height: 1.1;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
         }
 
         .cta p {
-            color: var(--text-secondary);
+            color: var(--gray-500);
             font-size: 1.2rem;
+            margin-bottom: 32px;
             max-width: 500px;
-            margin: 0 auto 40px;
-            font-weight: 300;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-contact {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .cta-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-500);
+        }
+
+        .cta-contact-item a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-contact-item a:hover {
+            color: var(--primary);
         }
 
         /* Footer */
         footer {
-            padding: 80px 0 40px;
-            border-top: 1px solid var(--border);
+            padding: 60px 0 30px;
+            background: var(--dark);
+            color: var(--gray-300);
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 16px;
+            display: inline-block;
         }
 
         .footer-brand p {
-            color: var(--text-secondary);
-            margin-top: 16px;
             font-size: 0.95rem;
             max-width: 280px;
         }
 
         .footer-links h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
-            color: var(--text-primary);
         }
 
         .footer-links ul {
@@ -682,23 +639,22 @@
         }
 
         .footer-links a {
-            color: var(--text-secondary);
+            color: var(--gray-300);
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: var(--text-primary);
+            color: var(--white);
         }
 
         .footer-bottom {
-            padding-top: 40px;
-            border-top: 1px solid var(--border);
+            padding-top: 30px;
+            border-top: 1px solid var(--gray-700);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: var(--text-muted);
             font-size: 0.875rem;
         }
 
@@ -708,37 +664,28 @@
         }
 
         .footer-social a {
-            color: var(--text-muted);
+            color: var(--gray-300);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
         .footer-social a:hover {
-            color: var(--text-primary);
+            color: var(--white);
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .value-grid,
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .process-grid {
+            .steps {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 48px;
             }
 
-            .process-grid::before {
+            .steps::before {
                 display: none;
-            }
-
-            .why-us .container {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-content {
@@ -752,253 +699,335 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
-                letter-spacing: -1px;
+                font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
             }
 
-            .hero-buttons {
+            .value-grid,
+            .services-grid,
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
+            .pricing-features {
+                flex-direction: column;
+                align-items: center;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 32px;
             }
 
             .footer-bottom {
                 flex-direction: column;
-                gap: 20px;
+                gap: 16px;
                 text-align: center;
             }
 
-            .trusted-logos {
-                gap: 32px;
+            .cta-contact {
+                flex-direction: column;
+                gap: 16px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav>
         <div class="container">
-            <a href="#" class="logo">Zero<span>.</span></a>
+            <a href="#" class="logo">Zero<span>Scale</span></a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="nav-cta">Free Quote</a>
+            <a href="#contact" class="nav-cta">Get Free Quote</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-bg">
-            <div class="hero-gradient hero-gradient-1"></div>
-            <div class="hero-gradient hero-gradient-2"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                Ready to start your project this week
-            </div>
-            <h1>Fast. Affordable. <span class="gradient-text">Done Right.</span></h1>
-            <p>AI-powered development that delivers in days, not months — at a fraction of traditional costs. No bloated timelines. No inflated budgets.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">
-                    Get Free Quote
-                    <span class="btn-arrow">&rarr;</span>
-                </a>
-                <a href="#services" class="btn-secondary">See Our Work</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted By -->
-    <section class="trusted">
         <div class="container">
-            <p>Trusted by teams worldwide</p>
-            <div class="trusted-logos">
-                <span class="trusted-logo">Startups</span>
-                <span class="trusted-logo">Enterprises</span>
-                <span class="trusted-logo">Agencies</span>
-                <span class="trusted-logo">Founders</span>
-                <span class="trusted-logo">Product Teams</span>
+            <div class="hero-badge">
+                <span class="hero-badge-icon">&#9889;</span>
+                AI-Powered Development
+            </div>
+            <h1>Custom Software<br><span>Built in Days, Not Months</span></h1>
+            <p class="hero-subtitle">We use AI to build your web apps, mobile apps, and software solutions 3x faster at half the cost of traditional agencies.</p>
+
+            <div class="hero-highlight">
+                <div class="hero-highlight-item">
+                    <span class="icon">&#10003;</span>
+                    MVP in 5-7 Days
+                </div>
+                <div class="hero-highlight-item">
+                    <span class="icon">&#10003;</span>
+                    Starting at $499
+                </div>
+                <div class="hero-highlight-item">
+                    <span class="icon">&#10003;</span>
+                    100% Money-Back Guarantee
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">
+                    Get Your Free Quote
+                    <span>&rarr;</span>
+                </a>
+                <a href="#services" class="btn-secondary">See Our Services</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>50+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>5 Days</h3>
+                    <p>Avg. MVP Delivery</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>60%</h3>
+                    <p>Cost Savings</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Value Props -->
+    <section class="value-props">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">&#128640;</div>
+                    <h3>Lightning Fast</h3>
+                    <p>AI accelerates every step. Get your MVP in days, full products in weeks.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">&#128176;</div>
+                    <h3>Budget Friendly</h3>
+                    <p>50-70% cheaper than agencies. Enterprise quality at startup prices.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">&#9733;</div>
+                    <h3>No Compromises</h3>
+                    <p>Fast and cheap doesn't mean sloppy. Clean, tested, production-ready code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included">
+        <div class="container">
+            <div class="section-header">
+                <h2>What's Included</h2>
+                <p>Everything you need to launch, nothing you don't</p>
+            </div>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-icon">&#128187;</div>
+                    <div class="included-content">
+                        <h4>Source Code Ownership</h4>
+                        <p>You own 100% of the code. No lock-in, ever.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">&#128196;</div>
+                    <div class="included-content">
+                        <h4>Documentation</h4>
+                        <p>Clear docs so your team can maintain and extend.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">&#128274;</div>
+                    <div class="included-content">
+                        <h4>Security Review</h4>
+                        <p>OWASP-compliant code. No vulnerabilities shipped.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">&#128241;</div>
+                    <div class="included-content">
+                        <h4>Responsive Design</h4>
+                        <p>Works perfectly on desktop, tablet, and mobile.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">&#9881;</div>
+                    <div class="included-content">
+                        <h4>Deployment Support</h4>
+                        <p>We help you deploy to your preferred cloud platform.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">&#128172;</div>
+                    <div class="included-content">
+                        <h4>30 Days Free Support</h4>
+                        <p>Bug fixes and questions answered for 30 days post-launch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <p class="section-label">What We Do</p>
-                <h2>Premium quality, startup prices</h2>
-                <p>Why pay agency rates? We use AI to deliver the same quality in half the time at half the cost.</p>
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>From idea to launch, we've got you covered</p>
             </div>
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">&#9671;</div>
                     <h3>Web Applications</h3>
-                    <p>Full-stack web apps with React, Next.js, and Node.js. From MVPs to enterprise-scale platforms, built for performance.</p>
+                    <p>Full-stack web apps with React, Next.js, Node.js. From landing pages to complex SaaS platforms.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">&#9674;</div>
-                    <h3>Mobile Development</h3>
-                    <p>Cross-platform mobile apps using React Native. Native experience, single codebase, faster time to market.</p>
+                <div class="service-card">
+                    <div class="service-icon">&#128241;</div>
+                    <h3>Mobile Apps</h3>
+                    <p>Cross-platform iOS & Android apps using React Native. One codebase, native performance.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">&#10022;</div>
+                <div class="service-card">
+                    <div class="service-icon">&#129302;</div>
                     <h3>AI Integration</h3>
-                    <p>Add intelligent features to your products. Chatbots, automation, predictive analytics, and custom AI solutions.</p>
+                    <p>Add ChatGPT, Claude, or custom AI to your product. Chatbots, automation, smart features.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">&#9702;</div>
-                    <h3>API Development</h3>
-                    <p>Robust REST and GraphQL APIs. Clean architecture, comprehensive documentation, built to scale.</p>
+                <div class="service-card">
+                    <div class="service-icon">&#9881;</div>
+                    <h3>APIs & Backend</h3>
+                    <p>REST & GraphQL APIs. Database design, authentication, third-party integrations.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">&#9711;</div>
+                <div class="service-card">
+                    <div class="service-icon">&#9729;</div>
                     <h3>Cloud & DevOps</h3>
-                    <p>AWS, GCP, Azure deployments. Infrastructure as code, CI/CD pipelines, and production-ready environments.</p>
+                    <p>AWS, GCP, Azure deployment. CI/CD pipelines, infrastructure as code, monitoring.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">&#10697;</div>
-                    <h3>Code Optimization</h3>
-                    <p>Performance audits and refactoring. Security reviews, technical debt reduction, and scalability improvements.</p>
+                <div class="service-card">
+                    <div class="service-icon">&#128269;</div>
+                    <h3>MVP Development</h3>
+                    <p>Validate your idea fast. We build functional MVPs in 5-7 days to test with real users.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process" id="process">
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <p class="section-label">How We Work</p>
-                <h2>Simple, transparent process</h2>
-                <p>From first contact to deployment, we keep things clear and efficient.</p>
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Simple, transparent, no surprises</p>
             </div>
-            <div class="process-grid">
-                <div class="process-step animate-on-scroll">
-                    <div class="step-number">01</div>
-                    <h3>Discovery</h3>
-                    <p>We understand your vision, requirements, and goals</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Share Your Idea</h3>
+                    <p>Tell us what you want to build. We'll get back within 24 hours.</p>
                 </div>
-                <div class="process-step animate-on-scroll">
-                    <div class="step-number">02</div>
-                    <h3>Planning</h3>
-                    <p>Detailed roadmap with milestones and deliverables</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Fixed Quote</h3>
+                    <p>No hourly rates. Know exactly what you'll pay before we start.</p>
                 </div>
-                <div class="process-step animate-on-scroll">
-                    <div class="step-number">03</div>
-                    <h3>Development</h3>
-                    <p>AI-accelerated building with regular updates</p>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>We Build It</h3>
+                    <p>Daily updates. Review progress anytime. Request changes as we go.</p>
                 </div>
-                <div class="process-step animate-on-scroll">
-                    <div class="step-number">04</div>
-                    <h3>Delivery</h3>
-                    <p>Testing, deployment, and handoff documentation</p>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Launch & Support</h3>
+                    <p>We deploy it, hand over the code, and support you for 30 days.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section class="why-us" id="why-us">
+    <!-- Pricing Highlight -->
+    <section class="pricing-highlight" id="pricing">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <p class="section-label">Why Choose Us</p>
-                <h2>Speed meets savings</h2>
-                <p>AI lets us work faster and charge less. You get agency-quality work at freelancer prices.</p>
+            <h2>Transparent Pricing</h2>
+            <p>No hidden fees, no hourly surprises. Fixed price for your entire project.</p>
+
+            <div class="price-box">
+                <div class="price">$499</div>
+                <div class="price-label">Starting price for MVPs</div>
             </div>
-            <div class="features-list">
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">&#9889;</div>
-                    <div class="feature-content">
-                        <h3>Lightning Fast</h3>
-                        <p>Days, not weeks. We deliver MVPs in 3-5 days, full projects in 1-2 weeks.</p>
-                    </div>
+
+            <div class="pricing-features">
+                <div class="pricing-feature">
+                    <span class="check">&#10003;</span>
+                    Fixed price guarantee
                 </div>
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">&#128176;</div>
-                    <div class="feature-content">
-                        <h3>Budget Friendly</h3>
-                        <p>50-70% less than agencies. AI efficiency means real savings passed to you.</p>
-                    </div>
+                <div class="pricing-feature">
+                    <span class="check">&#10003;</span>
+                    No hourly billing
                 </div>
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">&#9733;</div>
-                    <div class="feature-content">
-                        <h3>No Quality Compromise</h3>
-                        <p>Fast and cheap doesn't mean sloppy. Clean, tested, production-ready code.</p>
-                    </div>
+                <div class="pricing-feature">
+                    <span class="check">&#10003;</span>
+                    Pay 50% upfront, 50% on delivery
                 </div>
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">&#128172;</div>
-                    <div class="feature-content">
-                        <h3>Fixed Pricing</h3>
-                        <p>No hourly surprises. Get a quote upfront and know exactly what you'll pay.</p>
-                    </div>
+                <div class="pricing-feature">
+                    <span class="check">&#10003;</span>
+                    Free quote in 24 hours
                 </div>
             </div>
+
+            <a href="#contact" class="btn-primary">Get Your Custom Quote</a>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Guarantee -->
+    <section class="guarantee">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item animate-on-scroll">
-                    <h3>5 days</h3>
-                    <p>Average MVP Delivery</p>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <h3>60%</h3>
-                    <p>Cost Savings vs Agencies</p>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <h3>50+</h3>
-                    <p>Projects Shipped</p>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <h3>100%</h3>
-                    <p>Fixed Price Guarantee</p>
-                </div>
+            <div class="guarantee-box">
+                <div class="guarantee-icon">&#128170;</div>
+                <h2>100% Money-Back Guarantee</h2>
+                <p>Not satisfied with the final delivery? Get a full refund. No questions asked. We stand behind our work.</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta" id="contact">
-        <div class="cta-bg"></div>
         <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2>Get a free quote in 24 hours</h2>
-                <p>Tell us what you need. We'll tell you how fast we can build it and exactly what it'll cost. No obligations.</p>
-                <a href="mailto:hello@example.com" class="btn-primary">
-                    Get Your Free Quote
-                    <span class="btn-arrow">&rarr;</span>
-                </a>
+            <h2>Ready to Build?</h2>
+            <p>Get a free quote within 24 hours. No commitment, no pressure.</p>
+            <a href="mailto:hello@zeroscale.dev" class="btn-primary">
+                Get Your Free Quote
+                <span>&rarr;</span>
+            </a>
+            <div class="cta-contact">
+                <div class="cta-contact-item">
+                    <span>&#128231;</span>
+                    <a href="mailto:hello@zeroscale.dev">hello@zeroscale.dev</a>
+                </div>
+                <div class="cta-contact-item">
+                    <span>&#128172;</span>
+                    <a href="#">Upwork</a>
+                </div>
+                <div class="cta-contact-item">
+                    <span>&#128172;</span>
+                    <a href="#">Freelancer</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1008,8 +1037,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="logo">Zero<span>.</span></a>
-                    <p>Fast, affordable AI-powered development. Ship your product without breaking the bank.</p>
+                    <a href="#" class="logo">Zero<span>Scale</span></a>
+                    <p>AI-powered software development. Fast, affordable, done right.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Services</h4>
@@ -1017,19 +1046,19 @@
                         <li><a href="#services">Web Apps</a></li>
                         <li><a href="#services">Mobile Apps</a></li>
                         <li><a href="#services">AI Integration</a></li>
-                        <li><a href="#services">Cloud Solutions</a></li>
+                        <li><a href="#services">MVP Development</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#why-us">About</a></li>
-                        <li><a href="#process">Process</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Platforms</h4>
+                    <h4>Hire Us</h4>
                     <ul>
                         <li><a href="#">Upwork</a></li>
                         <li><a href="#">Freelancer</a></li>
@@ -1039,7 +1068,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Zero. All rights reserved.</p>
+                <p>&copy; 2025 ZeroScale. All rights reserved.</p>
                 <div class="footer-social">
                     <a href="#">Twitter</a>
                     <a href="#">LinkedIn</a>
@@ -1048,49 +1077,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
