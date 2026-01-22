@@ -653,23 +653,29 @@
 
         .service-image {
             width: 100%;
-            height: 160px;
+            height: 180px;
             margin-bottom: 24px;
             border-radius: 12px;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+            position: relative;
+        }
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(17, 24, 39, 0.4) 100%);
         }
 
         .service-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            padding: 16px;
-            transition: all 0.4s;
+            object-fit: cover;
+            transition: all 0.5s;
         }
 
         .service-card:hover .service-image img {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
 
         .service-card h3 {
@@ -1555,7 +1561,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://illustrations.popsy.co/violet/web-design.svg" alt="Web Applications">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=300&fit=crop" alt="Web Applications">
                     </div>
                     <h3>Web Applications</h3>
                     <p>Full-stack web applications built for performance and scale.</p>
@@ -1567,7 +1573,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://illustrations.popsy.co/violet/phone-call.svg" alt="Mobile Applications">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop" alt="Mobile Applications">
                     </div>
                     <h3>Mobile Applications</h3>
                     <p>Native and cross-platform apps for Android & iOS.</p>
@@ -1579,7 +1585,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://illustrations.popsy.co/violet/rocket.svg" alt="MVP Development">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop" alt="MVP Development">
                     </div>
                     <h3>MVPs & Startup Products</h3>
                     <p>Rapid MVP development to validate your ideas fast.</p>
@@ -1591,7 +1597,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://illustrations.popsy.co/violet/shopping-cart.svg" alt="Marketplace">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="Marketplace">
                     </div>
                     <h3>Marketplace Platforms</h3>
                     <p>Multi-sided platforms and marketplace applications.</p>
@@ -1603,7 +1609,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://illustrations.popsy.co/violet/work-from-home.svg" alt="Enterprise">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=300&fit=crop" alt="Enterprise">
                     </div>
                     <h3>Enterprise Software</h3>
                     <p>Scalable enterprise solutions for complex business needs.</p>
@@ -1615,7 +1621,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://illustrations.popsy.co/violet/online-shopping.svg" alt="E-Commerce">
+                        <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=400&h=300&fit=crop" alt="E-Commerce">
                     </div>
                     <h3>E-Commerce Solutions</h3>
                     <p>E-commerce and ordering platforms for businesses.</p>
