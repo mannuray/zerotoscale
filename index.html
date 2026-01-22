@@ -301,7 +301,7 @@
 
         /* Hero */
         .hero {
-            padding: 160px 0 100px;
+            padding: 140px 0 80px;
             text-align: center;
             position: relative;
             min-height: 100vh;
@@ -309,6 +309,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
         }
 
         .hero-carousel {
@@ -330,17 +331,10 @@
             background-position: center;
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
-            transform: scale(1.05);
-            animation: heroZoom 8s ease-in-out infinite alternate;
         }
 
         .hero-slide.active {
             opacity: 1;
-        }
-
-        @keyframes heroZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
         }
 
         .hero-overlay {
@@ -350,21 +344,171 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(
-                180deg,
-                rgba(0, 0, 0, 0.5) 0%,
-                rgba(0, 0, 0, 0.3) 50%,
-                rgba(0, 0, 0, 0.6) 100%
+                135deg,
+                rgba(15, 23, 42, 0.85) 0%,
+                rgba(30, 27, 75, 0.75) 50%,
+                rgba(15, 23, 42, 0.9) 100%
             );
             z-index: 1;
         }
 
-        .hero .floating-nodes {
+        /* Floating Code Panels */
+        .hero-floating-panels {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             z-index: 2;
+            pointer-events: none;
+            overflow: hidden;
         }
 
-        .hero .floating-nodes .node {
-            background: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        .floating-panel {
+            position: absolute;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.7rem;
+            color: #94a3b8;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: floatPanel 6s ease-in-out infinite;
+        }
+
+        .floating-panel.code {
+            top: 15%;
+            left: 5%;
+            width: 200px;
+            animation-delay: 0s;
+        }
+
+        .floating-panel.ai-suggest {
+            top: 20%;
+            right: 5%;
+            width: 180px;
+            border-color: rgba(16, 185, 129, 0.4);
+            animation-delay: 1s;
+        }
+
+        .floating-panel.test-pass {
+            bottom: 25%;
+            left: 8%;
+            width: 160px;
+            border-color: rgba(16, 185, 129, 0.5);
+            animation-delay: 2s;
+        }
+
+        .floating-panel.metrics {
+            bottom: 20%;
+            right: 8%;
+            width: 170px;
+            border-color: rgba(6, 182, 212, 0.4);
+            animation-delay: 1.5s;
+        }
+
+        .floating-panel.security {
+            top: 50%;
+            left: 3%;
+            width: 150px;
+            border-color: rgba(16, 185, 129, 0.5);
+            animation-delay: 2.5s;
+        }
+
+        .floating-panel.deploy {
+            top: 55%;
+            right: 3%;
+            width: 160px;
+            border-color: rgba(6, 182, 212, 0.4);
+            animation-delay: 3s;
+        }
+
+        @keyframes floatPanel {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-10px) rotate(1deg); opacity: 0.9; }
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .panel-header.cyan { color: #06b6d4; }
+        .panel-header.green { color: #10b981; }
+        .panel-header.purple { color: #a78bfa; }
+
+        .panel-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .code-line {
+            margin: 4px 0;
+            padding: 2px 0;
+        }
+
+        .code-keyword { color: #c084fc; }
+        .code-function { color: #60a5fa; }
+        .code-string { color: #34d399; }
+        .code-comment { color: #64748b; }
+
+        /* Grid Pattern Background */
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background-image:
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+        }
+
+        /* Data Flow Lines */
+        .hero-data-flow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .data-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.5), transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        .data-line:nth-child(1) { top: 20%; width: 200px; left: -200px; animation-delay: 0s; }
+        .data-line:nth-child(2) { top: 40%; width: 150px; left: -150px; animation-delay: 1s; }
+        .data-line:nth-child(3) { top: 60%; width: 180px; left: -180px; animation-delay: 2s; }
+        .data-line:nth-child(4) { top: 80%; width: 220px; left: -220px; animation-delay: 0.5s; }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(100vw + 300px)); }
         }
 
         .hero .container {
@@ -373,36 +517,62 @@
         }
 
         .hero-tagline {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #06b6d4;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             margin-bottom: 24px;
-            text-shadow: 0 2px 20px rgba(99, 102, 241, 0.5);
-            animation: taglinePulse 3s ease-in-out infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        @keyframes taglinePulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; text-shadow: 0 2px 30px rgba(99, 102, 241, 0.8); }
+        .hero-tagline::before,
+        .hero-tagline::after {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #06b6d4);
+        }
+
+        .hero-tagline::after {
+            background: linear-gradient(90deg, #06b6d4, transparent);
+        }
+
+        .hero-headline {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 28px;
+            color: var(--white);
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-headline .highlight {
+            background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.25rem);
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 24px;
-            color: var(--white);
-            max-width: 900px;
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 700px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 650px;
             margin: 0 auto 40px;
             line-height: 1.7;
         }
@@ -412,29 +582,111 @@
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 50px;
         }
 
         .hero .btn-primary {
-            background: var(--white);
-            color: var(--primary);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+            font-weight: 600;
         }
 
         .hero .btn-primary:hover {
-            background: var(--gray-100);
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(6, 182, 212, 0.5);
         }
 
         .hero .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .hero .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
-            border-color: var(--white);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero-micro-line {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-micro-line span {
+            color: #06b6d4;
+        }
+
+        /* Hero Indicators */
+        .hero-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 4;
+        }
+
+        .hero-indicators .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-indicators .indicator:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-indicators .indicator.active {
+            background: #06b6d4;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+
+        /* Mobile Hero Panels */
+        @media (max-width: 1024px) {
+            .floating-panel.code,
+            .floating-panel.metrics,
+            .floating-panel.security,
+            .floating-panel.deploy {
+                display: none;
+            }
+
+            .floating-panel.ai-suggest {
+                top: 12%;
+                right: 3%;
+                width: 150px;
+            }
+
+            .floating-panel.test-pass {
+                bottom: 18%;
+                left: 3%;
+                width: 140px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-floating-panels {
+                display: none;
+            }
+
+            .hero-tagline::before,
+            .hero-tagline::after {
+                width: 20px;
+            }
+
+            .hero-headline {
+                font-size: 1.75rem;
+            }
+
+            .hero-data-flow {
+                opacity: 0.5;
+            }
         }
 
         .hero-indicators {
@@ -2257,30 +2509,85 @@
     <section class="hero">
         <!-- Background Image Carousel -->
         <div class="hero-carousel">
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&h=1080&fit=crop')"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&h=1080&fit=crop')"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop')"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&h=1080&fit=crop')"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1573495611745-366c5f8f4cf3?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop')"></div>
         </div>
         <div class="hero-overlay"></div>
-        <div class="floating-nodes">
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
+        <div class="hero-grid"></div>
+
+        <!-- Data Flow Lines -->
+        <div class="hero-data-flow">
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
         </div>
+
+        <!-- Floating Code/AI Panels -->
+        <div class="hero-floating-panels">
+            <div class="floating-panel code">
+                <div class="panel-header purple">
+                    <span class="panel-dot"></span> main.ts
+                </div>
+                <div class="code-line"><span class="code-keyword">async</span> <span class="code-function">buildMVP</span>() {</div>
+                <div class="code-line">  <span class="code-keyword">await</span> ai.<span class="code-function">generate</span>();</div>
+                <div class="code-line">  <span class="code-keyword">return</span> <span class="code-string">'deployed'</span>;</div>
+                <div class="code-line">}</div>
+            </div>
+            <div class="floating-panel ai-suggest">
+                <div class="panel-header green">
+                    <span class="panel-dot"></span> AI Suggestion
+                </div>
+                <div class="code-line">Optimizing API response</div>
+                <div class="code-line" style="color: #10b981;">+40% faster queries</div>
+            </div>
+            <div class="floating-panel test-pass">
+                <div class="panel-header green">
+                    <span class="panel-dot"></span> Tests Passing
+                </div>
+                <div class="code-line" style="color: #10b981;">✓ 47/47 passed</div>
+                <div class="code-line">Coverage: 94%</div>
+            </div>
+            <div class="floating-panel metrics">
+                <div class="panel-header cyan">
+                    <span class="panel-dot"></span> Performance
+                </div>
+                <div class="code-line">Load time: <span style="color: #10b981;">0.8s</span></div>
+                <div class="code-line">Lighthouse: <span style="color: #10b981;">98</span></div>
+            </div>
+            <div class="floating-panel security">
+                <div class="panel-header green">
+                    <span class="panel-dot"></span> Security
+                </div>
+                <div class="code-line" style="color: #10b981;">✓ OWASP Compliant</div>
+                <div class="code-line" style="color: #10b981;">✓ SSL/TLS Enabled</div>
+            </div>
+            <div class="floating-panel deploy">
+                <div class="panel-header cyan">
+                    <span class="panel-dot"></span> Deploy v2.4.1
+                </div>
+                <div class="code-line">→ Production</div>
+                <div class="code-line" style="color: #10b981;">✓ Live in 12s</div>
+            </div>
+        </div>
+
         <div class="container">
             <p class="hero-tagline">Execution First. Commitment Later.</p>
+            <h2 class="hero-headline">
+                <span class="highlight">AI Experts</span> + <span class="highlight">AI Models</span> = High-Speed, High-Quality Software
+            </h2>
             <h1>We help founders and businesses move from idea to execution faster using an AI-driven SDLC model, led by experienced engineers.</h1>
             <p class="hero-subtitle">To demonstrate speed before commitment, we offer a Free MVP—so you see real execution before making decisions.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn-primary">Start with a Free MVP</a>
                 <a href="#contact" class="btn-secondary">Talk to Our Team</a>
             </div>
+            <p class="hero-micro-line"><span>Innovation-led</span> · <span>AI-accelerated</span> · <span>Engineer-driven</span></p>
         </div>
+
         <!-- Carousel Indicators -->
         <div class="hero-indicators">
             <span class="indicator active" data-slide="0"></span>
