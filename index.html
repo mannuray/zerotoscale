@@ -519,44 +519,101 @@
         /* Technology Stack */
         .tech-stack {
             padding: 100px 0;
+            background: var(--dark);
+            overflow: hidden;
         }
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 48px;
+        .tech-stack .section-header h2 {
+            color: var(--white);
         }
 
-        .tech-category {
-            background: var(--gray-100);
-            border-radius: 16px;
-            padding: 32px;
+        .tech-stack .section-header p {
+            color: var(--gray-300);
         }
 
-        .tech-category h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .tech-carousel-wrapper {
+            margin-top: 60px;
+            position: relative;
         }
 
-        .tech-list {
+        .tech-carousel-wrapper::before,
+        .tech-carousel-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .tech-carousel-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--dark), transparent);
+        }
+
+        .tech-carousel-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--dark), transparent);
+        }
+
+        .tech-carousel {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 48px;
+            animation: scroll 30s linear infinite;
         }
 
-        .tech-tag {
-            background: var(--white);
-            color: var(--gray-700);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
+        .tech-carousel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            min-width: 100px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .tech-item img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover img {
+            filter: none;
+            opacity: 1;
+        }
+
+        .tech-item span {
+            color: var(--gray-300);
+            font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid var(--gray-300);
+            text-align: center;
+        }
+
+        .tech-item:hover span {
+            color: var(--white);
         }
 
         /* Free MVP Section */
@@ -1293,62 +1350,160 @@
     </section>
 
     <!-- Technology Stack -->
-    <section class="tech-stack neural-bg" id="tech">
+    <section class="tech-stack" id="tech">
         <div class="container">
             <div class="section-header">
                 <h2>Build in Any Technology. Scale with Confidence.</h2>
-                <p>Our engineers work across modern and enterprise-grade technology stacks, selecting the right tools for your business, not forcing a single approach.</p>
+                <p>Our engineers work across modern and enterprise-grade technology stacks, selecting the right tools for your business.</p>
             </div>
-            <div class="tech-grid">
-                <div class="tech-category">
-                    <h3>Backend</h3>
-                    <div class="tech-list">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">.NET</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Python</span>
-                    </div>
+        </div>
+        <div class="tech-carousel-wrapper">
+            <div class="tech-carousel">
+                <!-- First set -->
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
                 </div>
-                <div class="tech-category">
-                    <h3>Frontend</h3>
-                    <div class="tech-list">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Angular</span>
-                        <span class="tech-tag">Vue</span>
-                        <span class="tech-tag">Next.js</span>
-                    </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
                 </div>
-                <div class="tech-category">
-                    <h3>Mobile</h3>
-                    <div class="tech-list">
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">iOS</span>
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Swift</span>
-                    </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
                 </div>
-                <div class="tech-category">
-                    <h3>Full Stack</h3>
-                    <div class="tech-list">
-                        <span class="tech-tag">MEAN</span>
-                        <span class="tech-tag">MERN</span>
-                    </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span>Java</span>
                 </div>
-                <div class="tech-category">
-                    <h3>CMS & Platforms</h3>
-                    <div class="tech-list">
-                        <span class="tech-tag">WordPress</span>
-                        <span class="tech-tag">Custom CMS</span>
-                    </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <span>TypeScript</span>
                 </div>
-                <div class="tech-category">
-                    <h3>Cloud & Infrastructure</h3>
-                    <div class="tech-list">
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">Azure</span>
-                        <span class="tech-tag">GCP</span>
-                    </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                    <span>Next.js</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="Angular">
+                    <span>Angular</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                    <span>Vue.js</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                    <span>Flutter</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                    <span>Swift</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                    <span>Azure</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+                    <span>GCP</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                    <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                    <span>Kubernetes</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                    <span>MongoDB</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                    <span>Redis</span>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                    <span>Next.js</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="Angular">
+                    <span>Angular</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                    <span>Vue.js</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                    <span>Flutter</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                    <span>Swift</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                    <span>Azure</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+                    <span>GCP</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                    <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                    <span>Kubernetes</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                    <span>MongoDB</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                    <span>Redis</span>
                 </div>
             </div>
         </div>
