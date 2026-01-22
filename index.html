@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Folwark | Execution First. Commitment Later.</title>
+    <title>Folwork | Execution First. Commitment Later.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,6 +37,122 @@
             color: var(--dark);
             line-height: 1.6;
             background: var(--white);
+        }
+
+        /* Neural Network / Circuit Board Pattern */
+        .neural-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neural-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 40% 80%, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+                radial-gradient(circle at 60% 20%, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+            background-size: 60px 60px, 80px 80px, 100px 100px, 120px 120px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .neural-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Circuit Board Pattern - Dark Theme */
+        .circuit-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .circuit-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80H10z' fill='none' stroke='%236366f1' stroke-width='0.3' opacity='0.15'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%236366f1' opacity='0.2'/%3E%3Ccircle cx='90' cy='10' r='2' fill='%236366f1' opacity='0.2'/%3E%3Ccircle cx='10' cy='90' r='2' fill='%236366f1' opacity='0.2'/%3E%3Ccircle cx='90' cy='90' r='2' fill='%236366f1' opacity='0.2'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%236366f1' opacity='0.25'/%3E%3Cpath d='M10 10L50 50M90 10L50 50M10 90L50 50M90 90L50 50' stroke='%236366f1' stroke-width='0.3' opacity='0.12'/%3E%3Cpath d='M50 10v30M50 60v30M10 50h30M60 50h30' stroke='%236366f1' stroke-width='0.4' opacity='0.15'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .circuit-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Neural Network Lines Animation */
+        .neural-lines-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neural-lines-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1;stop-opacity:0.3'/%3E%3Cstop offset='100%25' style='stop-color:%2310b981;stop-opacity:0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='20' cy='20' r='3' fill='white' opacity='0.4'/%3E%3Ccircle cx='100' cy='40' r='4' fill='white' opacity='0.5'/%3E%3Ccircle cx='180' cy='30' r='3' fill='white' opacity='0.4'/%3E%3Ccircle cx='40' cy='100' r='4' fill='white' opacity='0.5'/%3E%3Ccircle cx='100' cy='100' r='5' fill='white' opacity='0.6'/%3E%3Ccircle cx='160' cy='90' r='3' fill='white' opacity='0.4'/%3E%3Ccircle cx='30' cy='170' r='3' fill='white' opacity='0.4'/%3E%3Ccircle cx='90' cy='160' r='4' fill='white' opacity='0.5'/%3E%3Ccircle cx='170' cy='180' r='3' fill='white' opacity='0.4'/%3E%3Cpath d='M20 20L100 40M100 40L180 30M20 20L40 100M100 40L100 100M180 30L160 90M40 100L100 100M100 100L160 90M40 100L30 170M100 100L90 160M160 90L170 180M30 170L90 160M90 160L170 180' stroke='white' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-10px, -10px); }
+        }
+
+        .neural-lines-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animated Dots */
+        .floating-nodes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-nodes .node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .floating-nodes .node:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-nodes .node:nth-child(2) { top: 20%; left: 80%; animation-delay: 0.5s; }
+        .floating-nodes .node:nth-child(3) { top: 60%; left: 20%; animation-delay: 1s; }
+        .floating-nodes .node:nth-child(4) { top: 80%; left: 70%; animation-delay: 1.5s; }
+        .floating-nodes .node:nth-child(5) { top: 40%; left: 50%; animation-delay: 2s; }
+        .floating-nodes .node:nth-child(6) { top: 70%; left: 90%; animation-delay: 2.5s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(2); opacity: 0.6; }
         }
 
         .container {
@@ -111,7 +227,12 @@
         .hero {
             padding: 140px 0 80px;
             text-align: center;
-            background: linear-gradient(180deg, var(--gray-100) 0%, var(--white) 100%);
+            background: linear-gradient(180deg, #f0f0ff 0%, var(--white) 100%);
+        }
+
+        .hero.neural-bg::before,
+        .hero.circuit-bg::before {
+            opacity: 0.8;
         }
 
         .hero-tagline {
@@ -881,7 +1002,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">Fol<span>wark</span></a>
+            <a href="#" class="logo">Fol<span>work</span></a>
             <ul class="nav-links">
                 <li><a href="#process">How It Works</a></li>
                 <li><a href="#services">What We Build</a></li>
@@ -893,7 +1014,15 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero neural-bg circuit-bg">
+        <div class="floating-nodes">
+            <div class="node"></div>
+            <div class="node"></div>
+            <div class="node"></div>
+            <div class="node"></div>
+            <div class="node"></div>
+            <div class="node"></div>
+        </div>
         <div class="container">
             <p class="hero-tagline">Execution First. Commitment Later.</p>
             <h1>We help founders and businesses move from idea to execution faster using an AI-driven SDLC model, led by experienced engineers.</h1>
@@ -918,7 +1047,7 @@
     </section>
 
     <!-- AI-Driven SDLC -->
-    <section class="sdlc">
+    <section class="sdlc neural-lines-bg">
         <div class="container">
             <div class="section-header">
                 <h2>AI-Driven SDLC, Led by Engineers</h2>
@@ -1005,7 +1134,7 @@
     </section>
 
     <!-- Technology Stack -->
-    <section class="tech-stack" id="tech">
+    <section class="tech-stack neural-bg" id="tech">
         <div class="container">
             <div class="section-header">
                 <h2>Build in Any Technology. Scale with Confidence.</h2>
@@ -1067,7 +1196,7 @@
     </section>
 
     <!-- Free MVP -->
-    <section class="free-mvp" id="free-mvp">
+    <section class="free-mvp neural-lines-bg" id="free-mvp">
         <div class="container">
             <h2>Free MVP — Proof Before Commitment</h2>
             <p>To demonstrate how fast we build, we offer a Free MVP. This is a limited-scope prototype designed to:</p>
@@ -1182,7 +1311,7 @@
     </section>
 
     <!-- About -->
-    <section class="about" id="about">
+    <section class="about circuit-bg" id="about">
         <div class="container">
             <div class="about-content">
                 <h2>Built by Engineers, Focused on Execution</h2>
@@ -1231,14 +1360,14 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="neural-lines-bg">
         <div class="container">
             <div class="footer-content">
                 <p class="footer-tagline">Execution First. Commitment Later.</p>
                 <p class="footer-subtitle">Built by AI Engineers. Powered by AI Tools. Delivered with Speed.</p>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Folwark. All rights reserved.</p>
+                <p>&copy; 2025 Folwork. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="#process">How It Works</a>
                     <a href="#services">Services</a>
