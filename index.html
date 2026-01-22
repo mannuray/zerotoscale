@@ -225,36 +225,107 @@
 
         /* Hero */
         .hero {
-            padding: 140px 0 80px;
+            padding: 160px 0 100px;
             text-align: center;
-            background: linear-gradient(180deg, #f0f0ff 0%, var(--white) 100%);
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .hero.neural-bg::before,
-        .hero.circuit-bg::before {
-            opacity: 0.8;
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            transform: scale(1.05);
+            animation: heroZoom 8s ease-in-out infinite alternate;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        @keyframes heroZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(0, 0, 0, 0.6) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero .floating-nodes {
+            z-index: 2;
+        }
+
+        .hero .floating-nodes .node {
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 3;
         }
 
         .hero-tagline {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
+            letter-spacing: 4px;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 20px rgba(99, 102, 241, 0.5);
+            animation: taglinePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes taglinePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; text-shadow: 0 2px 30px rgba(99, 102, 241, 0.8); }
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: clamp(2.5rem, 5vw, 3.25rem);
+            font-weight: 700;
+            line-height: 1.3;
             margin-bottom: 24px;
-            color: var(--dark);
+            color: var(--white);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--gray-500);
+            color: rgba(255, 255, 255, 0.85);
             max-width: 700px;
             margin: 0 auto 40px;
             line-height: 1.7;
@@ -265,6 +336,59 @@
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        .hero .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .btn-primary:hover {
+            background: var(--gray-100);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        .hero-indicators {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 4;
+        }
+
+        .hero-indicators .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .hero-indicators .indicator:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-indicators .indicator.active {
+            background: var(--white);
+            transform: scale(1.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
         .btn-primary {
@@ -1215,7 +1339,89 @@
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: var(--gray-100);
+            background: linear-gradient(180deg, var(--dark) 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatOrb 15s ease-in-out infinite;
+        }
+
+        .contact::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatOrb 20s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        .contact-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .contact-particles .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: floatParticle 8s ease-in-out infinite;
+        }
+
+        .contact-particles .particle:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .contact-particles .particle:nth-child(2) { top: 25%; right: 15%; animation-delay: 1s; width: 4px; height: 4px; }
+        .contact-particles .particle:nth-child(3) { top: 60%; left: 5%; animation-delay: 2s; }
+        .contact-particles .particle:nth-child(4) { top: 80%; right: 8%; animation-delay: 3s; width: 8px; height: 8px; }
+        .contact-particles .particle:nth-child(5) { top: 45%; left: 3%; animation-delay: 4s; width: 4px; height: 4px; }
+        .contact-particles .particle:nth-child(6) { bottom: 20%; right: 12%; animation-delay: 5s; }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 0.7; }
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact .section-header {
+            margin-bottom: 60px;
+        }
+
+        .contact .section-header h2 {
+            color: var(--white);
+            font-size: 2.75rem;
+        }
+
+        .contact .section-header p {
+            color: var(--gray-300);
+            font-size: 1.15rem;
         }
 
         .contact-boxes {
@@ -1226,41 +1432,88 @@
         }
 
         .contact-box {
-            background: var(--white);
-            padding: 32px;
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px 32px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .contact-box:hover::before {
+            transform: scaleX(1);
         }
 
         .contact-box:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .contact-box-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.75rem;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s;
+        }
+
+        .contact-box:hover .contact-box-icon {
+            transform: scale(1.1);
+            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.4);
         }
 
         .contact-box h4 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--dark);
+            margin-bottom: 12px;
+            color: var(--white);
         }
 
         .contact-box p {
-            color: var(--gray-500);
+            color: var(--gray-300);
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
+        }
+
+        .contact-box p a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .contact-box p a:hover {
+            color: var(--white);
+            transform: translateX(4px);
         }
 
         .contact-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px;
             align-items: start;
         }
 
@@ -1268,19 +1521,121 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 16px;
+            color: var(--white);
         }
 
         .contact-info > p {
-            color: var(--gray-500);
+            color: var(--gray-300);
             font-size: 1.1rem;
             margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .contact-image {
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .contact-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 24px;
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .contact-info-card p {
+            color: var(--gray-300);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .contact-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-benefits li {
+            color: var(--gray-300);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .contact-benefits li::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .contact-form {
             background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--primary-light) 100%);
+            border-radius: 26px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .contact-form:hover::before {
+            opacity: 1;
+        }
+
+        .contact-form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .contact-form-subtitle {
+            color: var(--gray-500);
+            margin-bottom: 32px;
+            font-size: 0.95rem;
         }
 
         .form-group {
@@ -1522,7 +1877,16 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero neural-bg circuit-bg">
+    <section class="hero">
+        <!-- Background Image Carousel -->
+        <div class="hero-carousel">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&h=1080&fit=crop')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&h=1080&fit=crop')"></div>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="floating-nodes">
             <div class="node"></div>
             <div class="node"></div>
@@ -1539,6 +1903,14 @@
                 <a href="#contact" class="btn-primary">Start with a Free MVP</a>
                 <a href="#contact" class="btn-secondary">Talk to Our Team</a>
             </div>
+        </div>
+        <!-- Carousel Indicators -->
+        <div class="hero-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+            <span class="indicator" data-slide="4"></span>
         </div>
     </section>
 
@@ -2101,32 +2473,63 @@
 
     <!-- Contact -->
     <section class="contact" id="contact">
+        <div class="contact-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
         <div class="container">
+            <div class="section-header">
+                <h2>Let's Build Together</h2>
+                <p>Have an idea or a product to scale? Let's talk.</p>
+            </div>
+
             <!-- Contact Info Boxes -->
             <div class="contact-boxes">
                 <div class="contact-box">
-                    <div class="contact-box-icon">&#128205;</div>
-                    <h4>Address</h4>
+                    <div class="contact-box-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h4>Visit Us</h4>
                     <p>UG-006, MGF Metropolis Mall,<br>Mehrauli-Gurgaon Rd, Sector 28,<br>Gurugram, Haryana 122009</p>
                 </div>
                 <div class="contact-box">
-                    <div class="contact-box-icon">&#128222;</div>
-                    <h4>Phone</h4>
-                    <p>+91 8800453953</p>
+                    <div class="contact-box-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h4>Call Us</h4>
+                    <p><a href="tel:+918800453953">+91 8800453953</a></p>
                 </div>
                 <div class="contact-box">
-                    <div class="contact-box-icon">&#128231;</div>
-                    <h4>Email</h4>
-                    <p>hello@folwork.dev</p>
+                    <div class="contact-box-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </div>
+                    <h4>Email Us</h4>
+                    <p><a href="mailto:hello@folwork.dev">hello@folwork.dev</a></p>
                 </div>
             </div>
 
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h2>Let's Build Together</h2>
-                    <p>Have an idea or a product to scale? Let's talk.</p>
+                    <div class="contact-info-card">
+                        <h3>Ready to Start?</h3>
+                        <p>Fill out the form and our team will get back to you within 24 hours to discuss your project.</p>
+                        <ul class="contact-benefits">
+                            <li>Free initial consultation</li>
+                            <li>No commitment required</li>
+                            <li>Get a Free MVP demo</li>
+                        </ul>
+                    </div>
+                    <div class="contact-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=350&fit=crop" alt="Team collaboration">
+                    </div>
                 </div>
                 <form class="contact-form" id="contactForm">
+                    <h3 class="contact-form-title">Send us a message</h3>
+                    <p class="contact-form-subtitle">Tell us about your project and we'll help bring it to life.</p>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name *</label>
@@ -2175,6 +2578,43 @@
     </footer>
 
     <script>
+        // Hero Carousel
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroIndicators = document.querySelectorAll('.hero-indicators .indicator');
+        let currentSlide = 0;
+        let heroInterval;
+
+        function showSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                heroIndicators[i].classList.remove('active');
+            });
+            heroSlides[index].classList.add('active');
+            heroIndicators[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % heroSlides.length;
+            showSlide(next);
+        }
+
+        function startCarousel() {
+            heroInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Click on indicators
+        heroIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(heroInterval);
+                showSlide(index);
+                startCarousel();
+            });
+        });
+
+        // Start auto-rotation
+        startCarousel();
+
         // Contact Form - Google Sheets Integration
         const form = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
