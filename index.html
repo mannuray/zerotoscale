@@ -651,37 +651,25 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0.05) 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .service-image {
+            width: 100%;
+            height: 160px;
             margin-bottom: 24px;
-            padding: 16px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            transition: all 0.3s;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
         }
 
-        .service-icon img {
-            width: 48px;
-            height: 48px;
+        .service-image img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
-            filter: invert(45%) sepia(98%) saturate(2358%) hue-rotate(222deg) brightness(101%) contrast(91%);
-            transition: all 0.3s;
+            padding: 16px;
+            transition: all 0.4s;
         }
 
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-color: transparent;
-            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.4);
-        }
-
-        .service-card:hover .service-icon img {
-            filter: brightness(0) invert(1);
+        .service-card:hover .service-image img {
+            transform: scale(1.08);
         }
 
         .service-card h3 {
@@ -1566,8 +1554,8 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.44.0/icons/browser.svg" alt="Web">
+                    <div class="service-image">
+                        <img src="https://illustrations.popsy.co/violet/web-design.svg" alt="Web Applications">
                     </div>
                     <h3>Web Applications</h3>
                     <p>Full-stack web applications built for performance and scale.</p>
@@ -1578,8 +1566,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.44.0/icons/device-mobile.svg" alt="Mobile">
+                    <div class="service-image">
+                        <img src="https://illustrations.popsy.co/violet/phone-call.svg" alt="Mobile Applications">
                     </div>
                     <h3>Mobile Applications</h3>
                     <p>Native and cross-platform apps for Android & iOS.</p>
@@ -1590,8 +1578,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.44.0/icons/rocket.svg" alt="MVP">
+                    <div class="service-image">
+                        <img src="https://illustrations.popsy.co/violet/rocket.svg" alt="MVP Development">
                     </div>
                     <h3>MVPs & Startup Products</h3>
                     <p>Rapid MVP development to validate your ideas fast.</p>
@@ -1602,8 +1590,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.44.0/icons/building-store.svg" alt="Marketplace">
+                    <div class="service-image">
+                        <img src="https://illustrations.popsy.co/violet/shopping-cart.svg" alt="Marketplace">
                     </div>
                     <h3>Marketplace Platforms</h3>
                     <p>Multi-sided platforms and marketplace applications.</p>
@@ -1614,8 +1602,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.44.0/icons/settings-automation.svg" alt="Enterprise">
+                    <div class="service-image">
+                        <img src="https://illustrations.popsy.co/violet/work-from-home.svg" alt="Enterprise">
                     </div>
                     <h3>Enterprise Software</h3>
                     <p>Scalable enterprise solutions for complex business needs.</p>
@@ -1626,8 +1614,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.44.0/icons/shopping-cart.svg" alt="E-Commerce">
+                    <div class="service-image">
+                        <img src="https://illustrations.popsy.co/violet/online-shopping.svg" alt="E-Commerce">
                     </div>
                     <h3>E-Commerce Solutions</h3>
                     <p>E-commerce and ordering platforms for businesses.</p>
