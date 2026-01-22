@@ -985,44 +985,125 @@
         /* Why Choose Us */
         .why-us {
             padding: 100px 0;
-            background: var(--gray-100);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #6B8DD6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .why-us .section-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-us .section-header h2 {
+            color: var(--white);
+        }
+
+        .why-us .section-header p {
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
+            position: relative;
+            z-index: 1;
         }
 
         .why-card {
-            background: var(--white);
-            padding: 32px;
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 32px;
+            border-radius: 20px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+        }
+
+        .why-number {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.1);
+            line-height: 1;
         }
 
         .why-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--primary);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
             color: var(--white);
-            border-radius: 16px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--white);
+            color: var(--primary);
+            transform: scale(1.1) rotate(5deg);
         }
 
         .why-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
         }
 
         .why-card p {
-            color: var(--gray-500);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
         /* Portfolio / Our Work */
@@ -1875,37 +1956,44 @@
         <div class="container">
             <div class="section-header">
                 <h2>Why Teams Work With Us</h2>
+                <p>What sets us apart from traditional agencies</p>
             </div>
             <div class="why-grid">
                 <div class="why-card">
+                    <span class="why-number">01</span>
                     <div class="why-icon">&#128640;</div>
-                    <h3>Execution before promises</h3>
-                    <p>See real work before committing with our Free MVP offer.</p>
+                    <h3>Execution Before Promises</h3>
+                    <p>See real work before committing. Our Free MVP proves our speed and quality upfront.</p>
                 </div>
                 <div class="why-card">
+                    <span class="why-number">02</span>
                     <div class="why-icon">&#129302;</div>
-                    <h3>AI Engineers, not AI alone</h3>
-                    <p>AI tools powered by experienced human engineers.</p>
+                    <h3>AI + Human Engineers</h3>
+                    <p>AI accelerates delivery, but experienced engineers ensure quality and reliability.</p>
                 </div>
                 <div class="why-card">
+                    <span class="why-number">03</span>
                     <div class="why-icon">&#9889;</div>
-                    <h3>Faster delivery without cutting corners</h3>
-                    <p>Speed with quality—no compromises on fundamentals.</p>
+                    <h3>Speed Without Shortcuts</h3>
+                    <p>3x faster delivery without compromising code quality, testing, or security.</p>
                 </div>
                 <div class="why-card">
+                    <span class="why-number">04</span>
                     <div class="why-icon">&#128274;</div>
-                    <h3>Secure and scalable architecture</h3>
-                    <p>Built-in security and scalability from day one.</p>
+                    <h3>Security Built-In</h3>
+                    <p>Enterprise-grade security and scalable architecture from day one, not as an afterthought.</p>
                 </div>
                 <div class="why-card">
+                    <span class="why-number">05</span>
                     <div class="why-icon">&#9881;</div>
-                    <h3>Technology-agnostic development</h3>
-                    <p>We choose the right stack for your needs, not ours.</p>
+                    <h3>Technology Agnostic</h3>
+                    <p>We recommend the right stack for your needs, not push our preferred technologies.</p>
                 </div>
                 <div class="why-card">
+                    <span class="why-number">06</span>
                     <div class="why-icon">&#128176;</div>
-                    <h3>Clear pricing and engagement models</h3>
-                    <p>Transparent pricing with flexible engagement options.</p>
+                    <h3>Transparent Pricing</h3>
+                    <p>Clear engagement models with no hidden costs. Know exactly what you're paying for.</p>
                 </div>
             </div>
         </div>
