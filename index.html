@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZeroScale | AI-Powered Software Development in Days, Not Months</title>
+    <title>Folwark | Execution First. Commitment Later.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -114,69 +114,36 @@
             background: linear-gradient(180deg, var(--gray-100) 0%, var(--white) 100%);
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--white);
-            border: 1px solid var(--gray-300);
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.875rem;
-            color: var(--gray-700);
-            margin-bottom: 24px;
-        }
-
-        .hero-badge-icon {
+        .hero-tagline {
             font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1.2;
+            margin-bottom: 24px;
             color: var(--dark);
-        }
-
-        .hero h1 span {
-            color: var(--primary);
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--gray-500);
-            max-width: 600px;
-            margin: 0 auto 16px;
-        }
-
-        .hero-highlight {
-            display: inline-flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-
-        .hero-highlight-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .hero-highlight-item .icon {
-            color: var(--accent);
-            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
         }
 
         .hero-cta {
             display: flex;
             gap: 16px;
             justify-content: center;
-            margin-bottom: 48px;
+            flex-wrap: wrap;
         }
 
         .btn-primary {
@@ -215,67 +182,42 @@
             background: var(--gray-100);
         }
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 64px;
-            padding-top: 48px;
-            border-top: 1px solid var(--gray-300);
-            max-width: 600px;
-            margin: 0 auto;
+        /* Overview Section */
+        .overview {
+            padding: 100px 0;
         }
 
-        .hero-stat {
+        .overview-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .hero-stat h3 {
-            font-size: 2.5rem;
+        .overview h2 {
+            font-size: 2rem;
             font-weight: 800;
-            color: var(--primary);
+            margin-bottom: 24px;
         }
 
-        .hero-stat p {
+        .overview p {
+            font-size: 1.1rem;
             color: var(--gray-500);
-            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
 
-        /* Value Props */
-        .value-props {
-            padding: 80px 0;
+        .overview-highlight {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-top: 32px;
+        }
+
+        /* AI-Driven SDLC Section */
+        .sdlc {
+            padding: 100px 0;
             background: var(--dark);
             color: var(--white);
-        }
-
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .value-item {
-            text-align: center;
-            padding: 32px;
-        }
-
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-
-        .value-item h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-        }
-
-        .value-item p {
-            color: var(--gray-300);
-            font-size: 0.95rem;
-        }
-
-        /* What's Included */
-        .included {
-            padding: 100px 0;
         }
 
         .section-header {
@@ -290,53 +232,76 @@
         }
 
         .section-header p {
-            color: var(--gray-500);
+            color: var(--gray-300);
             font-size: 1.1rem;
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
+            line-height: 1.7;
         }
 
-        .included-grid {
+        .sdlc-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .sdlc-intro p {
+            color: var(--gray-300);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Process Steps */
+        .process {
+            padding: 100px 0;
+        }
+
+        .process-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
         }
 
-        .included-item {
-            display: flex;
-            gap: 16px;
-            padding: 24px;
+        .process-card {
+            text-align: center;
+            padding: 32px 24px;
             background: var(--gray-100);
-            border-radius: 12px;
+            border-radius: 16px;
+            transition: all 0.3s;
         }
 
-        .included-icon {
+        .process-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .process-number {
             width: 48px;
             height: 48px;
             background: var(--primary);
-            border-radius: 10px;
+            color: var(--white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            color: var(--white);
+            font-weight: 700;
             font-size: 1.25rem;
+            margin: 0 auto 20px;
         }
 
-        .included-content h4 {
+        .process-card h3 {
             font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .included-content p {
+        .process-card p {
             color: var(--gray-500);
             font-size: 0.9rem;
+            line-height: 1.6;
         }
 
-        /* Services */
+        /* What We Build */
         .services {
             padding: 100px 0;
             background: var(--gray-100);
@@ -354,6 +319,7 @@
             padding: 32px;
             border: 1px solid var(--gray-300);
             transition: all 0.3s;
+            text-align: center;
         }
 
         .service-card:hover {
@@ -363,15 +329,15 @@
         }
 
         .service-icon {
-            width: 56px;
-            height: 56px;
+            width: 64px;
+            height: 64px;
             background: var(--gray-100);
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            margin: 0 auto 20px;
+            font-size: 1.75rem;
         }
 
         .service-card:hover .service-icon {
@@ -380,375 +346,296 @@
         }
 
         .service-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
 
         .service-card p {
             color: var(--gray-500);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            padding: 100px 0;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            position: relative;
-        }
-
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 80px;
-            right: 80px;
-            height: 2px;
-            background: var(--gray-300);
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            position: relative;
-            z-index: 1;
-        }
-
-        .step h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            color: var(--gray-500);
             font-size: 0.9rem;
         }
 
-        /* Pricing Highlight */
-        .pricing-highlight {
-            padding: 80px 0;
+        .services-note {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 1rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        /* Technology Stack */
+        .tech-stack {
+            padding: 100px 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .tech-category {
+            background: var(--gray-100);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .tech-category h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            background: var(--white);
+            color: var(--gray-700);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--gray-300);
+        }
+
+        /* Free MVP Section */
+        .free-mvp {
+            padding: 100px 0;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
-            text-align: center;
         }
 
-        .pricing-highlight h2 {
+        .free-mvp .container {
+            max-width: 900px;
+        }
+
+        .free-mvp h2 {
             font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 16px;
+            text-align: center;
+            margin-bottom: 24px;
         }
 
-        .pricing-highlight p {
+        .free-mvp > .container > p {
+            text-align: center;
             font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 32px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .price-box {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 32px 48px;
-            margin-bottom: 32px;
-        }
-
-        .price-box .price {
-            font-size: 4rem;
-            font-weight: 800;
-        }
-
-        .price-box .price-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .pricing-features {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-            margin-bottom: 32px;
-        }
-
-        .pricing-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1rem;
-        }
-
-        .pricing-feature .check {
-            color: var(--accent);
-        }
-
-        .pricing-highlight .btn-primary {
-            background: var(--white);
-            color: var(--primary);
-        }
-
-        .pricing-highlight .btn-primary:hover {
-            background: var(--gray-100);
-        }
-
-        /* Guarantee */
-        .guarantee {
-            padding: 80px 0;
-            background: var(--gray-100);
-        }
-
-        .guarantee-box {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            background: var(--white);
-            border-radius: 20px;
-            padding: 48px;
-            border: 2px solid var(--accent);
-        }
-
-        .guarantee-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .guarantee-box h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .guarantee-box p {
-            color: var(--gray-500);
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* CTA */
-        .cta {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .cta p {
-            color: var(--gray-500);
-            font-size: 1.2rem;
-            margin-bottom: 32px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-contact {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin-top: 48px;
-            flex-wrap: wrap;
-        }
-
-        .cta-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--gray-500);
-        }
-
-        .cta-contact-item a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .cta-contact-item a:hover {
-            color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 0 30px;
-            background: var(--dark);
-            color: var(--gray-300);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
             margin-bottom: 48px;
         }
 
-        .footer-brand .logo {
-            color: var(--white);
-            margin-bottom: 16px;
-            display: inline-block;
+        .mvp-benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
         }
 
-        .footer-brand p {
-            font-size: 0.95rem;
-            max-width: 280px;
+        .mvp-benefit {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
         }
 
-        .footer-links h4 {
-            color: var(--white);
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
+        .mvp-benefit-icon {
+            font-size: 2rem;
             margin-bottom: 12px;
         }
 
-        .footer-links a {
-            color: var(--gray-300);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
+        .mvp-benefit h4 {
+            font-size: 1rem;
+            font-weight: 600;
         }
 
-        .footer-links a:hover {
-            color: var(--white);
+        .mvp-note {
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+            margin-top: 32px;
         }
 
-        .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid var(--gray-700);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.875rem;
+        .mvp-cta {
+            text-align: center;
         }
 
-        .footer-social {
-            display: flex;
-            gap: 24px;
+        .mvp-cta .btn-primary {
+            background: var(--white);
+            color: var(--primary);
         }
 
-        .footer-social a {
-            color: var(--gray-300);
-            text-decoration: none;
+        .mvp-cta .btn-primary:hover {
+            background: var(--gray-100);
         }
 
-        .footer-social a:hover {
-            color: var(--white);
-        }
-
-        /* Portfolio */
-        .portfolio {
+        /* Pricing Section */
+        .pricing {
             padding: 100px 0;
         }
 
-        .portfolio-grid {
+        .pricing-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .pricing-intro p {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+        }
+
+        .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
 
-        .portfolio-card {
+        .pricing-card {
             background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--gray-300);
+            border: 2px solid var(--gray-300);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
             transition: all 0.3s;
         }
 
-        .portfolio-card:hover {
+        .pricing-card:hover {
+            border-color: var(--primary);
             transform: translateY(-4px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
-        .portfolio-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, var(--white) 0%, #f5f3ff 100%);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .pricing-amount {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-desc {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+            background: var(--gray-100);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: var(--white);
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
         }
 
-        .portfolio-content {
-            padding: 24px;
-        }
-
-        .portfolio-tag {
-            display: inline-block;
-            background: var(--gray-100);
-            color: var(--gray-700);
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .portfolio-content h3 {
-            font-size: 1.2rem;
+        .why-card h3 {
+            font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
 
-        .portfolio-content p {
+        .why-card p {
             color: var(--gray-500);
             font-size: 0.9rem;
-            margin-bottom: 16px;
         }
 
-        .portfolio-tech {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
+        /* About Section */
+        .about {
+            padding: 100px 0;
         }
 
-        .portfolio-tech span {
-            background: var(--gray-100);
-            color: var(--gray-700);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 500;
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        /* Contact Form */
+        .about h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-highlight {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-top: 32px;
+        }
+
+        /* Contact Section */
         .contact {
             padding: 100px 0;
             background: var(--gray-100);
@@ -773,47 +660,6 @@
             margin-bottom: 32px;
         }
 
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .contact-detail-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.25rem;
-        }
-
-        .contact-detail-text h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-
-        .contact-detail-text p,
-        .contact-detail-text a {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-            text-decoration: none;
-        }
-
-        .contact-detail-text a:hover {
-            color: var(--primary);
-        }
-
         .contact-form {
             background: var(--white);
             padding: 40px;
@@ -834,8 +680,7 @@
         }
 
         .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-group textarea {
             width: 100%;
             padding: 14px 16px;
             border: 1px solid var(--gray-300);
@@ -847,8 +692,7 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
@@ -865,8 +709,14 @@
             gap: 16px;
         }
 
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
         .form-submit {
-            width: 100%;
+            flex: 1;
             padding: 16px 32px;
             background: var(--primary);
             color: var(--white);
@@ -889,6 +739,17 @@
             transform: none;
         }
 
+        .form-submit.secondary {
+            background: var(--white);
+            color: var(--dark);
+            border: 1px solid var(--gray-300);
+        }
+
+        .form-submit.secondary:hover {
+            background: var(--gray-100);
+            border-color: var(--dark);
+        }
+
         .form-status {
             margin-top: 16px;
             padding: 12px 16px;
@@ -909,30 +770,71 @@
             color: #991b1b;
         }
 
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            background: var(--dark);
+            color: var(--gray-300);
+        }
+
+        .footer-content {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .footer-tagline {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .footer-subtitle {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid var(--gray-700);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
-            .value-grid,
+            .process-grid,
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .services-grid,
-            .portfolio-grid {
+            .tech-grid,
+            .why-grid,
+            .mvp-benefits {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 48px;
-            }
-
-            .steps::before {
-                display: none;
             }
 
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 48px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -945,23 +847,16 @@
                 font-size: 2rem;
             }
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 24px;
-            }
-
-            .value-grid,
+            .process-grid,
             .services-grid,
-            .included-grid,
-            .portfolio-grid {
+            .tech-grid,
+            .pricing-grid,
+            .why-grid,
+            .mvp-benefits {
                 grid-template-columns: 1fr;
             }
 
             .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .steps {
                 grid-template-columns: 1fr;
             }
 
@@ -970,25 +865,14 @@
                 align-items: center;
             }
 
-            .pricing-features {
+            .form-buttons {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 32px;
             }
 
             .footer-bottom {
                 flex-direction: column;
                 gap: 16px;
                 text-align: center;
-            }
-
-            .cta-contact {
-                flex-direction: column;
-                gap: 16px;
             }
         }
     </style>
@@ -997,354 +881,314 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">Zero<span>Scale</span></a>
+            <a href="#" class="logo">Fol<span>wark</span></a>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#process">How It Works</a></li>
+                <li><a href="#services">What We Build</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="nav-cta">Get Free Quote</a>
+            <a href="#contact" class="nav-cta">Start Free MVP</a>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">
-                <span class="hero-badge-icon">&#9889;</span>
-                AI-Powered Development
-            </div>
-            <h1>Custom Software<br><span>Built in Days, Not Months</span></h1>
-            <p class="hero-subtitle">We use AI to build your web apps, mobile apps, and software solutions 3x faster at half the cost of traditional agencies.</p>
-
-            <div class="hero-highlight">
-                <div class="hero-highlight-item">
-                    <span class="icon">&#10003;</span>
-                    MVP in 5-7 Days
-                </div>
-                <div class="hero-highlight-item">
-                    <span class="icon">&#10003;</span>
-                    Starting at $499
-                </div>
-                <div class="hero-highlight-item">
-                    <span class="icon">&#10003;</span>
-                    100% Money-Back Guarantee
-                </div>
-            </div>
-
+            <p class="hero-tagline">Execution First. Commitment Later.</p>
+            <h1>We help founders and businesses move from idea to execution faster using an AI-driven SDLC model, led by experienced engineers.</h1>
+            <p class="hero-subtitle">To demonstrate speed before commitment, we offer a Free MVP—so you see real execution before making decisions.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn-primary">
-                    Get Your Free Quote
-                    <span>&rarr;</span>
-                </a>
-                <a href="#services" class="btn-secondary">See Our Services</a>
-            </div>
-
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <h3>50+</h3>
-                    <p>Projects Delivered</p>
-                </div>
-                <div class="hero-stat">
-                    <h3>5 Days</h3>
-                    <p>Avg. MVP Delivery</p>
-                </div>
-                <div class="hero-stat">
-                    <h3>60%</h3>
-                    <p>Cost Savings</p>
-                </div>
+                <a href="#contact" class="btn-primary">Start with a Free MVP</a>
+                <a href="#contact" class="btn-secondary">Talk to Our Team</a>
             </div>
         </div>
     </section>
 
-    <!-- Value Props -->
-    <section class="value-props">
+    <!-- Overview -->
+    <section class="overview">
         <div class="container">
-            <div class="value-grid">
-                <div class="value-item">
-                    <div class="value-icon">&#128640;</div>
-                    <h3>Lightning Fast</h3>
-                    <p>AI accelerates every step. Get your MVP in days, full products in weeks.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">&#128176;</div>
-                    <h3>Budget Friendly</h3>
-                    <p>50-70% cheaper than agencies. Enterprise quality at startup prices.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">&#9733;</div>
-                    <h3>No Compromises</h3>
-                    <p>Fast and cheap doesn't mean sloppy. Clean, tested, production-ready code.</p>
-                </div>
+            <div class="overview-content">
+                <h2>Supporting Overview</h2>
+                <p>We design and develop secure, scalable web and mobile applications by combining experienced engineers with AI-powered development tools.</p>
+                <p>Our approach accelerates the entire software delivery lifecycle—from idea and MVP to production-ready systems—while maintaining high standards of quality, security, and scalability.</p>
+                <p class="overview-highlight">Our focus is simple: deliver working software faster, without compromising fundamentals.</p>
             </div>
         </div>
     </section>
 
-    <!-- What's Included -->
-    <section class="included">
+    <!-- AI-Driven SDLC -->
+    <section class="sdlc">
         <div class="container">
             <div class="section-header">
-                <h2>What's Included</h2>
-                <p>Everything you need to launch, nothing you don't</p>
+                <h2>AI-Driven SDLC, Led by Engineers</h2>
             </div>
-            <div class="included-grid">
-                <div class="included-item">
-                    <div class="included-icon">&#128187;</div>
-                    <div class="included-content">
-                        <h4>Source Code Ownership</h4>
-                        <p>You own 100% of the code. No lock-in, ever.</p>
-                    </div>
+            <div class="sdlc-intro">
+                <p>We don't replace engineers with AI. We empower engineers with AI-powered tools to remove delays, reduce manual effort, and accelerate delivery across every stage of the SDLC.</p>
+                <p style="margin-top: 16px;">From requirements to deployment, our process is designed for speed, clarity, and reliability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Process</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Requirement Understanding</h3>
+                    <p>Engineers analyze business goals and technical needs using AI-assisted requirement analysis.</p>
                 </div>
-                <div class="included-item">
-                    <div class="included-icon">&#128196;</div>
-                    <div class="included-content">
-                        <h4>Documentation</h4>
-                        <p>Clear docs so your team can maintain and extend.</p>
-                    </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Architecture & Design</h3>
+                    <p>Secure and scalable system architecture designed by engineers, accelerated with AI-powered validation tools.</p>
                 </div>
-                <div class="included-item">
-                    <div class="included-icon">&#128274;</div>
-                    <div class="included-content">
-                        <h4>Security Review</h4>
-                        <p>OWASP-compliant code. No vulnerabilities shipped.</p>
-                    </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Development & Testing</h3>
+                    <p>Faster development cycles with AI-assisted coding, automated testing, and continuous quality checks—reviewed by engineers.</p>
                 </div>
-                <div class="included-item">
-                    <div class="included-icon">&#128241;</div>
-                    <div class="included-content">
-                        <h4>Responsive Design</h4>
-                        <p>Works perfectly on desktop, tablet, and mobile.</p>
-                    </div>
-                </div>
-                <div class="included-item">
-                    <div class="included-icon">&#9881;</div>
-                    <div class="included-content">
-                        <h4>Deployment Support</h4>
-                        <p>We help you deploy to your preferred cloud platform.</p>
-                    </div>
-                </div>
-                <div class="included-item">
-                    <div class="included-icon">&#128172;</div>
-                    <div class="included-content">
-                        <h4>30 Days Free Support</h4>
-                        <p>Bug fixes and questions answered for 30 days post-launch.</p>
-                    </div>
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <h3>Deployment & Scale</h3>
+                    <p>Production-ready delivery with scalability, performance, and security best practices built in.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
+    <!-- What We Build -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>Our Services</h2>
-                <p>From idea to launch, we've got you covered</p>
+                <h2>What We Build</h2>
+                <p>Software Solutions We Deliver</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">&#9671;</div>
+                    <div class="service-icon">&#128187;</div>
                     <h3>Web Applications</h3>
-                    <p>Full-stack web apps with React, Next.js, Node.js. From landing pages to complex SaaS platforms.</p>
+                    <p>Full-stack web applications built for performance and scale.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">&#128241;</div>
-                    <h3>Mobile Apps</h3>
-                    <p>Cross-platform iOS & Android apps using React Native. One codebase, native performance.</p>
+                    <h3>Mobile Applications</h3>
+                    <p>Native and cross-platform apps for Android & iOS.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">&#129302;</div>
-                    <h3>AI Integration</h3>
-                    <p>Add ChatGPT, Claude, or custom AI to your product. Chatbots, automation, smart features.</p>
+                    <div class="service-icon">&#128640;</div>
+                    <h3>MVPs & Startup Products</h3>
+                    <p>Rapid MVP development to validate your ideas fast.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#127970;</div>
+                    <h3>Marketplace & Platform Solutions</h3>
+                    <p>Multi-sided platforms and marketplace applications.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">&#9881;</div>
-                    <h3>APIs & Backend</h3>
-                    <p>REST & GraphQL APIs. Database design, authentication, third-party integrations.</p>
+                    <h3>Enterprise Software</h3>
+                    <p>Scalable enterprise solutions for complex business needs.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">&#9729;</div>
-                    <h3>Cloud & DevOps</h3>
-                    <p>AWS, GCP, Azure deployment. CI/CD pipelines, infrastructure as code, monitoring.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128269;</div>
-                    <h3>MVP Development</h3>
-                    <p>Validate your idea fast. We build functional MVPs in 5-7 days to test with real users.</p>
+                    <div class="service-icon">&#128722;</div>
+                    <h3>Local Commerce & Ordering Systems</h3>
+                    <p>E-commerce and ordering platforms for local businesses.</p>
                 </div>
             </div>
+            <p class="services-note">Every solution is built with speed, security, and scalability as core principles.</p>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
+    <!-- Technology Stack -->
+    <section class="tech-stack" id="tech">
         <div class="container">
             <div class="section-header">
-                <h2>How It Works</h2>
-                <p>Simple, transparent, no surprises</p>
+                <h2>Build in Any Technology. Scale with Confidence.</h2>
+                <p>Our engineers work across modern and enterprise-grade technology stacks, selecting the right tools for your business, not forcing a single approach.</p>
             </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Share Your Idea</h3>
-                    <p>Tell us what you want to build. We'll get back within 24 hours.</p>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3>Backend</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">.NET</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Get Fixed Quote</h3>
-                    <p>No hourly rates. Know exactly what you'll pay before we start.</p>
+                <div class="tech-category">
+                    <h3>Frontend</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Vue</span>
+                        <span class="tech-tag">Next.js</span>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>We Build It</h3>
-                    <p>Daily updates. Review progress anytime. Request changes as we go.</p>
+                <div class="tech-category">
+                    <h3>Mobile</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">iOS</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Swift</span>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Launch & Support</h3>
-                    <p>We deploy it, hand over the code, and support you for 30 days.</p>
+                <div class="tech-category">
+                    <h3>Full Stack</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">MEAN</span>
+                        <span class="tech-tag">MERN</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>CMS & Platforms</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">Custom CMS</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">GCP</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Highlight -->
-    <section class="pricing-highlight" id="pricing">
+    <!-- Free MVP -->
+    <section class="free-mvp" id="free-mvp">
         <div class="container">
-            <h2>Transparent Pricing</h2>
-            <p>No hidden fees, no hourly surprises. Fixed price for your entire project.</p>
-
-            <div class="price-box">
-                <div class="price">$499</div>
-                <div class="price-label">Starting price for MVPs</div>
-            </div>
-
-            <div class="pricing-features">
-                <div class="pricing-feature">
-                    <span class="check">&#10003;</span>
-                    Fixed price guarantee
+            <h2>Free MVP — Proof Before Commitment</h2>
+            <p>To demonstrate how fast we build, we offer a Free MVP. This is a limited-scope prototype designed to:</p>
+            <div class="mvp-benefits">
+                <div class="mvp-benefit">
+                    <div class="mvp-benefit-icon">&#9889;</div>
+                    <h4>Show real execution speed</h4>
                 </div>
-                <div class="pricing-feature">
-                    <span class="check">&#10003;</span>
-                    No hourly billing
+                <div class="mvp-benefit">
+                    <div class="mvp-benefit-icon">&#10003;</div>
+                    <h4>Validate core functionality</h4>
                 </div>
-                <div class="pricing-feature">
-                    <span class="check">&#10003;</span>
-                    Pay 50% upfront, 50% on delivery
-                </div>
-                <div class="pricing-feature">
-                    <span class="check">&#10003;</span>
-                    Free quote in 24 hours
+                <div class="mvp-benefit">
+                    <div class="mvp-benefit-icon">&#128736;</div>
+                    <h4>Demonstrate technical capability</h4>
                 </div>
             </div>
-
-            <a href="#contact" class="btn-primary">Get Your Custom Quote</a>
-        </div>
-    </section>
-
-    <!-- Guarantee -->
-    <section class="guarantee">
-        <div class="container">
-            <div class="guarantee-box">
-                <div class="guarantee-icon">&#128170;</div>
-                <h2>100% Money-Back Guarantee</h2>
-                <p>Not satisfied with the final delivery? Get a full refund. No questions asked. We stand behind our work.</p>
+            <p style="text-align: center; font-size: 1.1rem; opacity: 0.95; font-weight: 500;">The Free MVP is not a sales promise. It is proof of delivery.</p>
+            <p class="mvp-note">Note: The Free MVP is a non-production, evaluation-only build and is not part of paid engagement models.</p>
+            <div class="mvp-cta">
+                <a href="#contact" class="btn-primary">Start Your Free MVP</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio -->
-    <section class="portfolio" id="portfolio">
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Our Work</h2>
-                <p>Recent projects we've shipped for clients worldwide</p>
+                <h2>Flexible Engagement Models</h2>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">&#128722;</div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">E-Commerce</span>
-                        <h3>ShopFlow - Multi-vendor Marketplace</h3>
-                        <p>Built a complete marketplace with vendor dashboards, payments, and inventory management in 2 weeks.</p>
-                        <div class="portfolio-tech">
-                            <span>Next.js</span>
-                            <span>Node.js</span>
-                            <span>Stripe</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
+            <div class="pricing-intro">
+                <p>Before starting full-scale development, we estimate <strong>X</strong>—the market-equivalent cost of building your product with a traditional development agency. You can then choose the model that best fits your goals:</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Launch Partnership</h3>
+                    <div class="pricing-amount">20% of X</div>
+                    <p class="pricing-desc">+ Revenue Share</p>
+                    <ul class="pricing-features">
+                        <li>Minimal upfront cost</li>
+                        <li>Shared long-term success</li>
+                        <li>Ideal for early-stage startups</li>
+                        <li>Aligned incentives</li>
+                    </ul>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">&#129302;</div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">AI/SaaS</span>
-                        <h3>DocuMind - AI Document Assistant</h3>
-                        <p>AI-powered document analysis tool that extracts insights from PDFs, contracts, and reports.</p>
-                        <div class="portfolio-tech">
-                            <span>React</span>
-                            <span>Python</span>
-                            <span>OpenAI</span>
-                            <span>AWS</span>
-                        </div>
-                    </div>
+                <div class="pricing-card featured">
+                    <h3>Shared Risk</h3>
+                    <div class="pricing-amount">50% of X</div>
+                    <p class="pricing-desc">+ Revenue Share</p>
+                    <ul class="pricing-features">
+                        <li>Balanced upfront investment</li>
+                        <li>Aligned incentives</li>
+                        <li>Reduced financial risk</li>
+                        <li>Partnership approach</li>
+                    </ul>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">&#128241;</div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">Mobile App</span>
-                        <h3>FitTrack - Fitness Tracking App</h3>
-                        <p>Cross-platform mobile app with workout tracking, progress photos, and social features.</p>
-                        <div class="portfolio-tech">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
+                <div class="pricing-card">
+                    <h3>Upfront Commitment</h3>
+                    <div class="pricing-amount">70% of X</div>
+                    <p class="pricing-desc">Discounted Fixed Cost</p>
+                    <ul class="pricing-features">
+                        <li>Lower overall cost</li>
+                        <li>Full ownership</li>
+                        <li>No revenue sharing</li>
+                        <li>Predictable pricing</li>
+                    </ul>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">&#128202;</div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">Dashboard</span>
-                        <h3>MetricsHub - Analytics Dashboard</h3>
-                        <p>Real-time analytics dashboard connecting 10+ data sources with custom visualizations.</p>
-                        <div class="portfolio-tech">
-                            <span>React</span>
-                            <span>D3.js</span>
-                            <span>GraphQL</span>
-                            <span>MongoDB</span>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Teams Work With Us</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">&#128640;</div>
+                    <h3>Execution before promises</h3>
+                    <p>See real work before committing with our Free MVP offer.</p>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">&#127968;</div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">Booking Platform</span>
-                        <h3>StayEase - Property Management</h3>
-                        <p>Airbnb-style booking platform with calendar sync, automated messaging, and payment processing.</p>
-                        <div class="portfolio-tech">
-                            <span>Next.js</span>
-                            <span>Prisma</span>
-                            <span>Stripe</span>
-                            <span>Twilio</span>
-                        </div>
-                    </div>
+                <div class="why-card">
+                    <div class="why-icon">&#129302;</div>
+                    <h3>AI Engineers, not AI alone</h3>
+                    <p>AI tools powered by experienced human engineers.</p>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">&#128640;</div>
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">MVP</span>
-                        <h3>LaunchPad - Startup Toolkit</h3>
-                        <p>All-in-one MVP built in 5 days: landing page, waitlist, dashboard, and Stripe integration.</p>
-                        <div class="portfolio-tech">
-                            <span>Next.js</span>
-                            <span>Supabase</span>
-                            <span>Tailwind</span>
-                            <span>Vercel</span>
-                        </div>
-                    </div>
+                <div class="why-card">
+                    <div class="why-icon">&#9889;</div>
+                    <h3>Faster delivery without cutting corners</h3>
+                    <p>Speed with quality—no compromises on fundamentals.</p>
                 </div>
+                <div class="why-card">
+                    <div class="why-icon">&#128274;</div>
+                    <h3>Secure and scalable architecture</h3>
+                    <p>Built-in security and scalability from day one.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">&#9881;</div>
+                    <h3>Technology-agnostic development</h3>
+                    <p>We choose the right stack for your needs, not ours.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">&#128176;</div>
+                    <h3>Clear pricing and engagement models</h3>
+                    <p>Transparent pricing with flexible engagement options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Built by Engineers, Focused on Execution</h2>
+                <p>We are a team of engineers who believe speed matters—but quality matters more.</p>
+                <p>By combining engineering expertise with AI-powered development tools, we help startups and businesses build software faster, smarter, and more sustainably.</p>
+                <p class="about-highlight">Our focus is simple: deliver working software, not long timelines.</p>
             </div>
         </div>
     </section>
@@ -1354,78 +1198,32 @@
         <div class="container">
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h2>Let's Build Together</h2>
-                    <p>Tell us about your project and we'll get back to you within 24 hours with a free quote.</p>
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon">&#128231;</div>
-                            <div class="contact-detail-text">
-                                <h4>Email</h4>
-                                <a href="mailto:hello@zeroscale.dev">hello@zeroscale.dev</a>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon">&#128172;</div>
-                            <div class="contact-detail-text">
-                                <h4>Upwork</h4>
-                                <a href="#">View Profile</a>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon">&#128172;</div>
-                            <div class="contact-detail-text">
-                                <h4>Freelancer</h4>
-                                <a href="#">View Profile</a>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-detail-icon">&#9201;</div>
-                            <div class="contact-detail-text">
-                                <h4>Response Time</h4>
-                                <p>Within 24 hours</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h2>Let's Build Something Real</h2>
+                    <p>Have an idea or a product to scale? Let's talk.</p>
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="project">Project Type</label>
-                        <select id="project" name="project">
-                            <option value="">Select a project type</option>
-                            <option value="web-app">Web Application</option>
-                            <option value="mobile-app">Mobile App</option>
-                            <option value="mvp">MVP Development</option>
-                            <option value="ai-integration">AI Integration</option>
-                            <option value="api">API Development</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
                     </div>
                     <div class="form-group">
-                        <label for="budget">Budget Range</label>
-                        <select id="budget" name="budget">
-                            <option value="">Select your budget</option>
-                            <option value="499-1000">$499 - $1,000</option>
-                            <option value="1000-2500">$1,000 - $2,500</option>
-                            <option value="2500-5000">$2,500 - $5,000</option>
-                            <option value="5000-10000">$5,000 - $10,000</option>
-                            <option value="10000+">$10,000+</option>
-                        </select>
+                        <label for="message">Brief description of your project *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Project Details *</label>
-                        <textarea id="message" name="message" required placeholder="Tell us about your project, goals, and timeline..."></textarea>
+                    <div class="form-buttons">
+                        <button type="submit" class="form-submit">Start Free MVP</button>
+                        <button type="button" class="form-submit secondary" onclick="window.location.href='#contact'">Schedule a Call</button>
                     </div>
-                    <button type="submit" class="form-submit">Send Message &rarr;</button>
                     <div class="form-status" id="formStatus"></div>
                 </form>
             </div>
@@ -1436,43 +1234,16 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">Zero<span>Scale</span></a>
-                    <p>AI-powered software development. Fast, affordable, done right.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Web Apps</a></li>
-                        <li><a href="#services">Mobile Apps</a></li>
-                        <li><a href="#services">AI Integration</a></li>
-                        <li><a href="#services">MVP Development</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Hire Us</h4>
-                    <ul>
-                        <li><a href="#">Upwork</a></li>
-                        <li><a href="#">Freelancer</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">GitHub</a></li>
-                    </ul>
-                </div>
+                <p class="footer-tagline">Execution First. Commitment Later.</p>
+                <p class="footer-subtitle">Built by AI Engineers. Powered by AI Tools. Delivered with Speed.</p>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 ZeroScale. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
+                <p>&copy; 2025 Folwark. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#process">How It Works</a>
+                    <a href="#services">Services</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
         </div>
@@ -1499,8 +1270,7 @@
             const formData = {
                 name: form.name.value,
                 email: form.email.value,
-                project: form.project.value,
-                budget: form.budget.value,
+                phone: form.phone.value,
                 message: form.message.value,
                 timestamp: new Date().toISOString()
             };
@@ -1516,11 +1286,11 @@
                 });
 
                 // Since no-cors doesn't return response, assume success
-                formStatus.textContent = 'Message sent successfully! We\'ll get back to you within 24 hours.';
+                formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
                 formStatus.className = 'form-status success';
                 form.reset();
             } catch (error) {
-                formStatus.textContent = 'Something went wrong. Please email us directly at hello@zeroscale.dev';
+                formStatus.textContent = 'Something went wrong. Please try again.';
                 formStatus.className = 'form-status error';
             }
 
