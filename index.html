@@ -756,6 +756,83 @@
             font-size: 0.9rem;
         }
 
+        /* Portfolio / Our Work */
+        .portfolio {
+            padding: 100px 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .portfolio-content {
+            padding: 24px;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-content p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .portfolio-tech {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-tech span {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
         /* About Section */
         .about {
             padding: 100px 0;
@@ -791,6 +868,45 @@
         .contact {
             padding: 100px 0;
             background: var(--gray-100);
+        }
+
+        .contact-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-box h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .contact-box p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .contact-wrapper {
@@ -980,7 +1096,9 @@
             .services-grid,
             .tech-grid,
             .why-grid,
-            .mvp-benefits {
+            .mvp-benefits,
+            .portfolio-grid,
+            .contact-boxes {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -1009,7 +1127,9 @@
             .pricing-grid,
             .why-grid,
             .mvp-benefits,
-            .stats-grid {
+            .stats-grid,
+            .portfolio-grid,
+            .contact-boxes {
                 grid-template-columns: 1fr;
             }
 
@@ -1154,11 +1274,11 @@
         </div>
     </section>
 
-    <!-- What We Build -->
+    <!-- Our Services -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>What We Build</h2>
+                <h2>Our Services</h2>
                 <p>Software Solutions We Deliver</p>
             </div>
             <div class="services-grid">
@@ -1374,6 +1494,96 @@
         </div>
     </section>
 
+    <!-- Our Work -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Work</h2>
+                <p>Recent projects we've delivered for clients worldwide</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">&#128722;</div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">E-Commerce</span>
+                        <h3>Multi-vendor Marketplace</h3>
+                        <p>Complete marketplace with vendor dashboards, payments, and inventory management.</p>
+                        <div class="portfolio-tech">
+                            <span>Next.js</span>
+                            <span>Node.js</span>
+                            <span>Stripe</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">&#129302;</div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">AI/SaaS</span>
+                        <h3>AI Document Assistant</h3>
+                        <p>AI-powered document analysis tool that extracts insights from PDFs and contracts.</p>
+                        <div class="portfolio-tech">
+                            <span>React</span>
+                            <span>Python</span>
+                            <span>OpenAI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">&#128241;</div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Mobile App</span>
+                        <h3>Fitness Tracking App</h3>
+                        <p>Cross-platform mobile app with workout tracking and social features.</p>
+                        <div class="portfolio-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">&#128202;</div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Dashboard</span>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Real-time analytics connecting 10+ data sources with custom visualizations.</p>
+                        <div class="portfolio-tech">
+                            <span>React</span>
+                            <span>D3.js</span>
+                            <span>GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">&#127968;</div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Booking Platform</span>
+                        <h3>Property Management</h3>
+                        <p>Booking platform with calendar sync, messaging, and payment processing.</p>
+                        <div class="portfolio-tech">
+                            <span>Next.js</span>
+                            <span>Prisma</span>
+                            <span>Stripe</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">&#128640;</div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">MVP</span>
+                        <h3>Startup Toolkit</h3>
+                        <p>All-in-one MVP: landing page, waitlist, dashboard, and Stripe integration.</p>
+                        <div class="portfolio-tech">
+                            <span>Next.js</span>
+                            <span>Supabase</span>
+                            <span>Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About -->
     <section class="about circuit-bg" id="about">
         <div class="container">
@@ -1389,9 +1599,28 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
+            <!-- Contact Info Boxes -->
+            <div class="contact-boxes">
+                <div class="contact-box">
+                    <div class="contact-box-icon">&#128205;</div>
+                    <h4>Address</h4>
+                    <p>Remote-first team<br>Serving clients globally</p>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-box-icon">&#128222;</div>
+                    <h4>Phone</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-box-icon">&#128231;</div>
+                    <h4>Email</h4>
+                    <p>hello@folwork.dev</p>
+                </div>
+            </div>
+
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h2>Let's Build Something Real</h2>
+                    <h2>Let's Build Together</h2>
                     <p>Have an idea or a product to scale? Let's talk.</p>
                 </div>
                 <form class="contact-form" id="contactForm">
