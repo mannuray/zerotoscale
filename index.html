@@ -303,6 +303,37 @@
             background: var(--gray-100);
         }
 
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--dark);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-light);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: var(--gray-300);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
         /* Overview Section */
         .overview {
             padding: 100px 0;
@@ -953,6 +984,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 48px;
@@ -973,8 +1008,13 @@
             .tech-grid,
             .pricing-grid,
             .why-grid,
-            .mvp-benefits {
+            .mvp-benefits,
+            .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stat-item h3 {
+                font-size: 2.5rem;
             }
 
             .form-row {
@@ -1030,6 +1070,30 @@
             <div class="hero-cta">
                 <a href="#contact" class="btn-primary">Start with a Free MVP</a>
                 <a href="#contact" class="btn-secondary">Talk to Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3 Days</h3>
+                    <p>Avg. MVP Delivery</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50%</h3>
+                    <p>Time Savings</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50%</h3>
+                    <p>Cost Savings</p>
+                </div>
             </div>
         </div>
     </section>
