@@ -1066,27 +1066,25 @@
             line-height: 1;
         }
 
-        .why-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 2rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s;
+        .why-image {
+            width: 100%;
+            height: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
             position: relative;
             z-index: 1;
         }
 
-        .why-card:hover .why-icon {
-            background: var(--white);
-            color: var(--primary);
-            transform: scale(1.1) rotate(5deg);
+        .why-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s;
+        }
+
+        .why-card:hover .why-image img {
+            transform: scale(1.1);
         }
 
         .why-card h3 {
@@ -1961,37 +1959,49 @@
             <div class="why-grid">
                 <div class="why-card">
                     <span class="why-number">01</span>
-                    <div class="why-icon">&#128640;</div>
+                    <div class="why-image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop" alt="Execution">
+                    </div>
                     <h3>Execution Before Promises</h3>
                     <p>See real work before committing. Our Free MVP proves our speed and quality upfront.</p>
                 </div>
                 <div class="why-card">
                     <span class="why-number">02</span>
-                    <div class="why-icon">&#129302;</div>
+                    <div class="why-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" alt="AI Engineers">
+                    </div>
                     <h3>AI + Human Engineers</h3>
                     <p>AI accelerates delivery, but experienced engineers ensure quality and reliability.</p>
                 </div>
                 <div class="why-card">
                     <span class="why-number">03</span>
-                    <div class="why-icon">&#9889;</div>
+                    <div class="why-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop" alt="Speed">
+                    </div>
                     <h3>Speed Without Shortcuts</h3>
                     <p>3x faster delivery without compromising code quality, testing, or security.</p>
                 </div>
                 <div class="why-card">
                     <span class="why-number">04</span>
-                    <div class="why-icon">&#128274;</div>
+                    <div class="why-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=250&fit=crop" alt="Security">
+                    </div>
                     <h3>Security Built-In</h3>
                     <p>Enterprise-grade security and scalable architecture from day one, not as an afterthought.</p>
                 </div>
                 <div class="why-card">
                     <span class="why-number">05</span>
-                    <div class="why-icon">&#9881;</div>
+                    <div class="why-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop" alt="Technology">
+                    </div>
                     <h3>Technology Agnostic</h3>
                     <p>We recommend the right stack for your needs, not push our preferred technologies.</p>
                 </div>
                 <div class="why-card">
                     <span class="why-number">06</span>
-                    <div class="why-icon">&#128176;</div>
+                    <div class="why-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop" alt="Pricing">
+                    </div>
                     <h3>Transparent Pricing</h3>
                     <p>Clear engagement models with no hidden costs. Know exactly what you're paying for.</p>
                 </div>
